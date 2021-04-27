@@ -77,12 +77,17 @@ export default {
                     this.$emit("clicked", true);
                 });
 
-            this.$refs.addForm.reset();
+            this.resetData();
             this.$bvModal.hide("modal-1");
         },
         loadFile: function() {
             let loadFile = document.getElementById("file");
             this.formdata.append("file", loadFile.files[0]);
+        },
+        resetData: function() {
+            this.fullname = "";
+            this.email = "";
+            this.address = "";
         }
     }
 };
